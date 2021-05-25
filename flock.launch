@@ -1,0 +1,17 @@
+<!-- Simulation-->
+<launch>
+    <param name="/use_sim_time" value="true"/>
+    <param name="num_robots" value="{{ num_robots }}"/>
+    <param name="robot_name_prefix" value="robot_"/>
+
+    <node pkg="stage_ros" type="stageros" name="stageros" args="{{ world_file }}">
+     <node pkg="flocking_example" type="flock_configure.py" name="flock_configure">
+   
+   
+    {% for i in range(num_robots) %}
+    <include file="$(find flocking example)/launch/turtlebot.launch" ns="robot_{{ i }}">
+        <arg name="robot_index" value="{{ i }}"/>
+    </include>
+
+    {% endfor %}
+</launch>
