@@ -3,7 +3,16 @@
 ### Spring 21, COSC269
 
 ### Purpose of Assingment 
+The purpose of this assingment is to introduce ROS, the simulator, and a behavioral based multirobot formation control. 
 
+Modifying the simulation for multirobots 
+Implementing flocking behavior through simpler local behavior 
+
+### The task 
+1- create a world in Gazebo simulator with 3 robots
+2- Assuming that the robot can also get information about the other orientation and position, implement seperation, alignment, and cohesion behavior 
+3- The robot should not collide with any obstacle 
+4- Create a simulated world in stage, with 10 robots and test the same code in the simulator
 
 ### Requirements 
 - ROS -- tested on Melodic, but other versions may work.
@@ -12,9 +21,6 @@
 ### Methods 
 How does your program work? What design decisions did you make? 
 
-It can ba assumed that the robot starts at one of the vertices, following one of the edges, complete it either clockwise or counte-clockwise 
-
-the node should publish at each of the vertices of the polygon the error message using ```std_msgs/Float32``` between the current position and the expected polygon vertice location
 
 To test the code:  
 ``` 
